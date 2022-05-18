@@ -1,0 +1,151 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">$(document).ready(function () {
+
+            $('#linkClose').click(function () {
+                $('#divError').hide('fade');
+            });
+
+    /*$('#btnLogin').click(function () {
+
+        var Login = {
+                Username: $('#txtUsername').val(),
+                Password: $('#txtPassword').val(),
+                grant_type: 'password'
+        };
+
+
+        console.log(Login);
+
+                $.ajax({
+                    // Post username, password & the grant type to /token
+                    url: 'Login/CheckLogin',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: {
+                        Login
+                    },
+                    // When the request completes successfully, save the
+                    // access token in the browser session storage and
+                    // redirect the user to Data.html page. We do not have
+                    // this page yet. So please add it to the
+                    // EmployeeService project before running it
+                    success: function (response) {
+                        sessionStorage.setItem("accessToken", response.access_token);
+                        window.location.href = "Data.html";
+                    },
+                    // Display errors if any in the Bootstrap alert <div>
+                    error: function (jqXHR) {
+                        $('#divErrorText').text(jqXHR.responseText);
+                        $('#divError').show('fade');
+                    }
+                });
+            });
+          });*/
+    </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+        .cancelbtn {
+            width: 49%;
+            /* padding: 10px 18px;*/
+            padding: 14px 20px;
+            margin: 8px 0;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            /*padding-top: 16px;*/
+        }
+
+        /* Change styles for span and cancel button on extra small screens
+        media screen and (max-width: 300px) {
+          span.psw {
+             display: block;
+             float: none;
+          }
+          .cancelbtn {
+             width: 100%;
+          }
+        }
+            */
+    </style>
+</head>
+<body>
+    <form id="form1" method="post" action="Login/CheckLogin" >
+        <div class="imgcontainer">
+
+            <img src="Images/IOTcover.jpeg" alt="Avatar">
+
+        </div>
+
+        <div class="container">
+            <label for="uname"> <b> Username</b> </label>
+            <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
+
+            <label for="psw"> <b> Password</b> </label>
+            <input type="password" placeholder="Enter Password" name="Password" id="Password" required>
+
+            <button type="submit" id="btnLogin"> Login</button> <button type="button" class="cancelbtn"> Cancel</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <span class="psw"> Forgot <a href="#"> password?</a> </span>
+        </div>
+    </form>
+</body>
+</html>
